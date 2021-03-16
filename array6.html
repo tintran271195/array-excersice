@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Exercises</title>
+  </head>
+  <body>
+    <input type="button" value="exercises 1" onclick="exercises1()" />
+    <input type="button" value="exercises 2" onclick="exercises2()" />
+    <input type="button" value="exercises 3" onclick="exercises3()" />
+  </body>
+  <script>
+    function exercises1() {
+      var myColors = ["Red", "Green", "White", "Black"];
+      console.log(myColors.toString());
+    }
+    function exercises2() {
+      const num = window.prompt();
+      const str = num.toString();
+      const result = [str[0]];
+
+      for (let x = 1; x < str.length; x++) {
+        if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+          result.push("-", str[x]);
+        } else {
+          result.push(str[x]);
+        }
+      }
+      console.log(result.join(""));
+    }
+    function exercises3() {
+      let str = "The Quick Brown Fox";
+      let UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      let LOWER = "abcdefghijkmnopqrestuvwxyz";
+      let result = [];
+      for (let i = 0; i < str.length; i++) {
+        if (UPPER.indexOf(str[i]) !== -1) {
+          result.push(str[i].toLowerCase());
+        } else {
+          if (LOWER.indexOf(str[i]) !== -1) {
+            result.push(str[i].toUpperCase());
+          } else {
+            result.push(str[i]);
+          }
+        }
+      }
+      console.log(result.join(""));
+    }
+  </script>
+</html>
